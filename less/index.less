@@ -111,6 +111,24 @@ body{
 	margin: 0 auto;
 }
 
+h1{
+	font-size: 5rem;
+	font-family: @header-fonts;
+}
+h2{
+	font-size: 2rem;
+	font-family: @header-fonts;
+}
+p{
+	font-size: 1.6rem;
+	font-family: @p-fonts;
+	line-height: 1.25;
+}
+li{
+	font-size: 1.6rem;
+	font-family: @p-fonts;
+}
+
 header{
 	width: 100%;
 	margin: 3vh 0;
@@ -146,13 +164,11 @@ header{
 	.intro-title{
 
 		h1{
-			font-size: 5rem;
 			font-family: @header-fonts;
 			margin-bottom: 2vh;
 		}//close h1
 
 		h2{
-			font-size: 2rem;
 			font-family: @header-fonts;
 		}//close h2
 	}//close .intro-title
@@ -167,7 +183,6 @@ header{
 	.intro-desc{
 
 		p{
-			font-size: 1.6rem;
 			font-family: @p-fonts;
 		} //close p
 	}//close .intro-desc
@@ -187,3 +202,89 @@ header{
 	}//close .intro-btn
 }//closes .intro
 
+.info{
+	margin: 5vh 0;
+	.personal{
+		display: flex;
+		justify-content: space-between;
+
+		.listen{
+			width: 45%;
+
+			h2{
+				margin-bottom: 2vh;
+			}//h2
+	
+			p{
+	
+			}//p
+		}//listen
+	}//.personal
+
+	.good-stuff{
+		width: 45%;
+		
+		h2{
+			margin-bottom: 2vh;
+		}//h2
+
+		ul{
+			li{
+				padding: 2%;
+				.border();
+			}//li
+		}//ul
+	}//.good-stuff
+}//.info
+
+.history{
+	margin-top: 5vh;
+	.chart{
+
+		table{
+			width: 100%;
+			.border();
+
+			border-collapse: collapse;
+			width: 100%;
+			
+			tr{
+
+				td{
+					border: 1px solid #dddddd;
+					text-align: left;
+					padding: 1%;
+					font-family: @p-fonts;
+					font-size: 1.5rem;
+				}
+	
+				th{
+					border: 1px solid #dddddd;
+					text-align: left;
+					padding: 1%;
+					font-family: @header-fonts;
+					font-size: 2rem;
+				}
+
+				strong{
+					font-weight: 800;
+				}
+			}
+
+			tr:nth-child(even){
+				background: rgb(206, 206, 206);
+			}
+		}//table
+	}//chart
+}//history
+
+footer{
+	.centeredRow();
+	background: rgb(109, 105, 101);
+	
+	p{
+		padding: 3%;
+		color: white;
+		font-family: @header-fonts;
+	}//p
+}//footer
