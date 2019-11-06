@@ -107,8 +107,12 @@ html{
 //Styling for my practice resume
 
 body{
-	width: 60%;
+	width: 75%;
 	margin: 0 auto;
+
+	@media(max-width: 500px){
+		width: 90%;
+	}
 }
 
 h1{
@@ -128,15 +132,39 @@ li{
 	font-size: 1.6rem;
 	font-family: @p-fonts;
 }
+.logo-cont{
+	display: none;
+}
+
 
 header{
 	width: 100%;
 	margin: 3vh 0;
+	.centeredRow();
+	justify-content: space-between;
+
+	.logo-cont{
+		@media(max-width: 500px){
+			display: flex;
+			justify-content: flex-start;
+			width: 50%;
+		}//MQ for logo-cont
+
+		img{
+			width: 100%;
+		}//img
+	}//logo-cont
 	
 	nav{
 		.centeredRow();
 		justify-content: flex-end;
 		width: 100%;
+
+		@media(max-width: 500px){
+			flex-flow: column;
+			align-items: flex-end;
+			width: 50%;
+		}//MQ for nav
 
 		a{
 			font-family: @link-fonts;
@@ -144,6 +172,11 @@ header{
 			margin: 0 2%;
 			font-size: 2rem;
 			color: black;
+
+			@media(max-width: 500px){
+				margin: 2vh 0;
+				font-size: 2.25rem;
+			}//MQ for a
 		}//close a
 	}//close nav
 }//close header
@@ -153,8 +186,12 @@ header{
 	padding: 3% 2%;
 
 	.intro-img-cont{
-		width: 25%;
+		width: 30%;
 		margin-bottom: 2vh;
+
+		@media(max-width: 500px){
+			width: 100%;
+		}//MQ for intr-img-cont
 
 		img{
 			
@@ -162,6 +199,10 @@ header{
 	}//closes .intro-img-cont
 
 	.intro-title{
+		@media(max-width: 500px){
+			width: 100%;
+			text-align: center;
+		}//MQ for intro-title
 
 		h1{
 			font-family: @header-fonts;
@@ -181,6 +222,10 @@ header{
 	}//close line-break
 
 	.intro-desc{
+		@media(max-width: 500px){
+			width: 100%;
+			text-align: center;
+		}//MQ intro-desc
 
 		p{
 			font-family: @p-fonts;
@@ -189,6 +234,11 @@ header{
 
 	.intro-btn{
 		margin: 3vh 0;
+
+		@media(max-width: 500px){
+			width: 100%;
+			text-align: center;
+		}//MQ intro-btn
 
 		a{
 			font-size: 2rem;
@@ -208,8 +258,16 @@ header{
 		display: flex;
 		justify-content: space-between;
 
+		@media(max-width: 500px){
+			flex-flow: column;
+		}//MQ personal
+
 		.listen{
 			width: 45%;
+
+			@media(max-width: 500px){
+				width: 100%;
+			}
 
 			h2{
 				margin-bottom: 2vh;
@@ -223,6 +281,11 @@ header{
 
 	.good-stuff{
 		width: 45%;
+
+		@media(max-width: 500px){
+			width: 100%;
+			margin-top: 3vh;
+		}//MQ good-stuff
 		
 		h2{
 			margin-bottom: 2vh;
@@ -233,6 +296,10 @@ header{
 				padding: 2%;
 				.border();
 			}//li
+
+			#special-li{
+				font-size: 0.9rem;
+			}//special-li
 		}//ul
 	}//.good-stuff
 }//.info
@@ -279,12 +346,21 @@ header{
 }//history
 
 footer{
-	.centeredRow();
+	.centeredColumn();
+	flex-flow: column-reverse;
 	background: rgb(109, 105, 101);
-	
+
 	p{
-		padding: 3%;
+		padding: 2%;
 		color: white;
 		font-family: @header-fonts;
 	}//p
+
+	span{
+		font-size: 1.5rem;
+		color: white;
+		font-family: @p-fonts;
+		padding: 1%;
+		margin: 1vh 0;
+	}//span
 }//footer
