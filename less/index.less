@@ -50,18 +50,140 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
+
+html{
+	font-size: 62.5%;
+}
+
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+
+//***Variables***
+@link-fonts: 'Oswald', sans-serif;
+@p-fonts: 'Open Sans', sans-serif;
+@header-fonts: 'Oswald', sans-serif; 
+
+
+
+//***Mixins***
+
+// .centeredRow() will justify-content: center on a row
+.centeredRow(){
+	display: flex;
+	justify-content: center;
+}
+//.centeredColumn() make children a column and will align-items on a column;
+.centeredColumn(){
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+//.lineBreak() will add a nicely styled line break with a color of black
+.lineBreak(){
+	height: 1px;
+	background: black;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+}
+
+.border(){
+	border: 1px solid gray;
+}
+
 
 
 //Styling for my practice resume
 
 body{
-	width: 75%;
-	margin: 10vh auto;
+	width: 60%;
+	margin: 0 auto;
 }
+
+header{
+	width: 100%;
+	margin: 3vh 0;
+	
+	nav{
+		.centeredRow();
+		justify-content: flex-end;
+		width: 100%;
+
+		a{
+			font-family: @link-fonts;
+			text-decoration: none;
+			margin: 0 2%;
+			font-size: 2rem;
+			color: black;
+		}//close a
+	}//close nav
+}//close header
+
+.intro{
+	background: rgb(206, 206, 206);
+	padding: 3% 2%;
+
+	.intro-img-cont{
+		width: 25%;
+		margin-bottom: 2vh;
+
+		img{
+			
+		}//close img
+	}//closes .intro-img-cont
+
+	.intro-title{
+
+		h1{
+			font-size: 5rem;
+			font-family: @header-fonts;
+			margin-bottom: 2vh;
+		}//close h1
+
+		h2{
+			font-size: 2rem;
+			font-family: @header-fonts;
+		}//close h2
+	}//close .intro-title
+
+	.line-break{
+		// background: rgb(148, 148, 148);
+		// height: 1px;
+		.lineBreak();
+		background: rgb(160, 160, 160);
+	}//close line-break
+
+	.intro-desc{
+
+		p{
+			font-size: 1.6rem;
+			font-family: @p-fonts;
+		} //close p
+	}//close .intro-desc
+
+	.intro-btn{
+		margin: 3vh 0;
+
+		a{
+			font-size: 2rem;
+			text-decoration: none;
+			border-radius: 2px;
+			padding: 0.5% 1%;
+			background: rgb(109, 105, 101);
+			color: white;
+			font-family: @link-fonts;
+		}//close link
+	}//close .intro-btn
+}//closes .intro
 
